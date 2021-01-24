@@ -100,7 +100,6 @@ class CMakePreset:
         for cmakeParam in presetNode.find('CMakeParams'):
             if cmakeParam.attrib['name'] == 'CMAKE_INSTALL_PREFIX' or cmakeParam.attrib['name'] == 'PX_OUTPUT_LIB_DIR' or cmakeParam.attrib['name'] == 'PX_OUTPUT_EXE_DIR' or cmakeParam.attrib['name'] == 'PX_OUTPUT_DLL_DIR':
                 cmParam = '-D' + cmakeParam.attrib['name'] + '=\"' + \
-                    os.environ['PHYSX_ROOT_DIR'] + '/' + \
                     cmakeParam.attrib['value'] + '\"'
             elif cmakeParam.attrib['name'] == 'ANDROID_ABI':
                 cmParam = '-D' + \
